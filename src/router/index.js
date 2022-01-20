@@ -12,7 +12,7 @@ const routes = [
     path: "/",
     name: "index",
     component: resolve => require(['@/views/index.vue'], resolve),
-    redirect: '/monitorCenter',
+    redirect: '/home',
     meta: { requiresAuth: true },
     children:[
       {

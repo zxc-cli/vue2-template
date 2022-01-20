@@ -1,6 +1,6 @@
 <template>
   <el-aside width="206px" class="nav">
-    <img src="@/assets/img/logo.png" alt="" class="nav__logo">
+    <img src="@/assets/img/home/logo.png" alt="" class="nav__logo">
     <el-menu 
       @select="select"
       :default-active="$route.name"
@@ -16,8 +16,8 @@
         :index="menu.index"
       >
         <template slot="title">
-          <span class="nav__menu__icon" :style="{marginRight: lang ==  'en-US' ? '0' :'15px' }"><img :src="require(`@/assets/img/${menu.imgSrc}`)" alt=""></span>
-          <span class="nav__menu__title"> {{$menu.title}}</span>
+          <span class="nav__menu__icon"><img :src="require(`@/assets/img/${menu.imgSrc}`)" alt=""></span>
+          <span class="nav__menu__title"> {{menu.title}}</span>
         </template>
         <template v-if="menu.child">
           <el-menu-item 
@@ -36,7 +36,6 @@
   </el-aside>
 </template>
 <script>
-import { mapState, mapMutations, mapActions } from "vuex";
 export default {
   components:{
     
@@ -53,16 +52,16 @@ export default {
         index:'reportCenter',
         child:[
         {
-          title:'leftContent22',
-          index:'commandHistory'
+          title:'列表1',
+          index:'列表1'
         },
         {
-          title:'leftContent23',
-          index:'alarmReport'
+          title:'列表2',
+          index:'列表2'
         },
         {
-          title:'leftContent25',
-          index:'historyReport'
+          title:'列表3',
+          index:'列表3'
         }]
       }]
     };
@@ -78,7 +77,7 @@ export default {
   },
   methods: {
     select(item){
-      this.$router.push({name:item})
+      // this.$router.push({name:item})
     },
     changeTag(item){
       return item ? 'ElSubmenu' : 'ElMenuItem' 

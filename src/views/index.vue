@@ -34,5 +34,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.main {
+  height: 100%;
+  width: 100%;
+  background: #eaedf1;
+  display: flex;
+  &__content {
+    overflow: hidden;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .content{
+    display: flex;
+    flex-direction: column;
+    background: #f3f3f3;
+  }
+}
 </style>
